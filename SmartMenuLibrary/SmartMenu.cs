@@ -24,13 +24,17 @@ namespace SmartMenuLibrary
                 lines.Add(line);
             }
 
+            // Set title and description
             MenuTitle = lines[0];
             InputDescription = lines[1];
 
+            // Read in menu points.
             menuPoints = new string[lines.Count - 2, 2];
             for(int i=2; i < lines.Count; i++) {
                 string[] split = lines[i].Split(';');
+                // Point title
                 menuPoints[i - 2, 0] = split[0];
+                // Point ID
                 menuPoints[i - 2, 1] = split[1];
             }
 
