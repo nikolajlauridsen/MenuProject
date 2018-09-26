@@ -10,7 +10,11 @@ namespace SmartMenuLibrary {
         public static void Call(String menuId) {
             // Implement call here 
             // Hint - lav switch case some caller metoderne i functions.cs og printer resultatet. 
-            Console.WriteLine("Y no work");
+            if(menuId == "this")
+            {
+                Console.WriteLine(Functions.DoThis());
+            }
+            
         }
     }
 }
