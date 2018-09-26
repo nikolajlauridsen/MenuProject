@@ -10,6 +10,7 @@ namespace SmartMenuLibrary
     {
         public void LoadMenu(string path)
         {
+            // Read the text file
             String line;
             // String list for each line (works like array but with arbitrary size;
             List<String> lines = new List<string>();
@@ -17,11 +18,6 @@ namespace SmartMenuLibrary
             System.IO.StreamReader textFile = new System.IO.StreamReader(path);
             while((line = textFile.ReadLine()) != null) {
                 lines.Add(line);
-            }
-
-            Console.WriteLine("Lines read");
-            foreach(String msg in lines) {
-                Console.WriteLine(msg);
             }
         }
         public void Activate()
