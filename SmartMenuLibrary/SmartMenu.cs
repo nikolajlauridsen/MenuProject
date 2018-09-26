@@ -60,10 +60,9 @@ namespace SmartMenuLibrary
                     break;
                 } else if (int.TryParse(cmd, out selection)) {
                     selection -= 1;
-                    // Call binding here
                     if (selection < menuPoints.GetLength(0)) {
                         // Call binding here
-                        Console.WriteLine("Binding seleceted: " + menuPoints[selection, 1]);
+                        Bindings.Call(menuPoints[selection, 1]);
                         Console.ReadLine();
                     } else {
                         Console.WriteLine("Selection too high, choose number in list");
@@ -73,7 +72,6 @@ namespace SmartMenuLibrary
                     Console.WriteLine("Invalid selection, please choose a number");
                     Console.ReadLine();
                 }
-                
                 
             }
         }
