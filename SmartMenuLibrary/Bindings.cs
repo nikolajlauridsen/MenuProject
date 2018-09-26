@@ -25,6 +25,10 @@ namespace SmartMenuLibrary {
                 string noget = Console.ReadLine();
                 Console.WriteLine(Functions.DoSomething(noget));
             }
+            else if (menuId == "another")
+            {
+                Console.WriteLine(Functions.GetTheAnswerToLifeTheUniverseAndEverything());
+            }
         }
     }
 }
