@@ -14,7 +14,10 @@ namespace SmartMenuLibrary {
             {
                 Console.WriteLine(Functions.DoThis());
             }
-            
+            else if (menuId == "that")
+            {
+                Console.WriteLine(Functions.DoThat());
+            }
         }
     }
 }
