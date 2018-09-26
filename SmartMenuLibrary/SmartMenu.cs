@@ -41,7 +41,42 @@ namespace SmartMenuLibrary
 
         public void Activate()
         {
-            // Implement ...
+            int selection = 0;
+
+            while (true) {
+                // Clear screen and print menu
+                Console.Clear();
+                Console.WriteLine(MenuTitle);
+
+                // Print all menu titles.
+                for(int i=0; i < menuPoints.GetLength(0); i++) {
+                    Console.WriteLine("\t" + (i + 1) + ". " + menuPoints[i, 0]);
+                }
+                // Print description and recieve input
+                Console.Write("\n" + InputDescription);
+                String cmd = Console.ReadLine();
+                // Test input and call binding
+                if (cmd.ToLower() == "0") {
+                    break;
+                } else if (int.TryParse(cmd, out selection)) {
+                    selection -= 1;
+                    // Call binding here
+                    if (selection < menuPoints.GetLength(0)) {
+                        // Call binding here
+                        Console.WriteLine("Binding seleceted: " + menuPoints[selection, 1]);
+                        Console.ReadLine();
+                    } else {
+                        Console.WriteLine("Selection too high, choose number in list");
+                        Console.ReadLine();
+                    }
+                } else {
+                    Console.WriteLine("Invalid selection, please choose a number");
+                    Console.ReadLine();
+                }
+                
+                
+            }
         }
     }
 }
+ 
