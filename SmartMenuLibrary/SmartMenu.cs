@@ -37,16 +37,8 @@ namespace SmartMenuLibrary
                 // Point ID
                 menuPoints[i - 2, 1] = split[1];
             }
-
-            // Test if it works.
-            Console.WriteLine("Menu title: " + MenuTitle);
-            Console.WriteLine("Desc: " + InputDescription);
-            Console.WriteLine("Menu points: ");
-            for(int i=0; i < menuPoints.GetLength(0); i++) {
-                Console.WriteLine("Point title: " + menuPoints[i, 0]);
-                Console.WriteLine("Point id: " + menuPoints[i, 1]);
-            }
         }
+
         public void Activate()
         {
             // Implement ...
