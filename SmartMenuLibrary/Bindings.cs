@@ -10,13 +10,20 @@ namespace SmartMenuLibrary {
         public static void Call(String menuId) {
             // Implement call here 
             // Hint - lav switch case some caller metoderne i functions.cs og printer resultatet. 
-            if(menuId == "this")
+            if (menuId == "this")
             {
                 Console.WriteLine(Functions.DoThis());
             }
             else if (menuId == "that")
             {
                 Console.WriteLine(Functions.DoThat());
+
+            }
+            else if (menuId == "something")
+            {
+                Console.Write("Please enter something: ");
+                string noget = Console.ReadLine();
+                Console.WriteLine(Functions.DoSomething(noget));
             }
         }
     }
