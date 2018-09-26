@@ -21,14 +21,27 @@ namespace SmartMenuLibrary {
             }
             else if (menuId == "something")
             {
-                Console.Write("Please enter something: ");
-                string noget = Console.ReadLine();
+                string noget;
+                while (true)
+                {
+                    Console.Write("Please enter something: ");
+                    noget = Console.ReadLine();
+                    if (noget.Length <= 0)
+                    {
+                        Console.WriteLine("Pleae ENTER something!");
+
+                    } else
+                    {
+                        break;
+                    }
+                }
                 Console.WriteLine(Functions.DoSomething(noget));
             }
             else if (menuId == "another")
             {
                 Console.WriteLine(Functions.GetTheAnswerToLifeTheUniverseAndEverything());
             }
+            
         }
     }
 }

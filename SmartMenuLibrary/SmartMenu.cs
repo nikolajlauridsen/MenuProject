@@ -60,19 +60,25 @@ namespace SmartMenuLibrary
                     break;
                 } else if (int.TryParse(cmd, out selection)) {
                     selection -= 1;
-                    if (selection < menuPoints.GetLength(0)) {
+                    if (selection < menuPoints.GetLength(0))
+                    {
                         // Call binding here
                         Bindings.Call(menuPoints[selection, 1]);
-                        Console.ReadLine();
-                    } else {
-                        Console.WriteLine("Selection too high, choose number in list");
-                        Console.ReadLine();
                     }
-                } else {
-                    Console.WriteLine("Invalid selection, please choose a number");
-                    Console.ReadLine();
+                    else
+                    {
+                        Console.WriteLine("Selection too high, choose number in list");
+                    }
                 }
-                
+                else if (cmd.Length <= 0)
+                {
+                    Console.WriteLine("Pleae ENTER something!");
+
+                }
+                else {
+                    Console.WriteLine("Invalid selection, please choose a number");
+                }
+                Console.ReadLine();
             }
         }
     }
