@@ -23,6 +23,7 @@ namespace SmartMenuLibrary
             while((line = textFile.ReadLine()) != null) {
                 lines.Add(line);
             }
+            textFile.Close();
 
             // Set title and description
             MenuTitle = lines[0];
