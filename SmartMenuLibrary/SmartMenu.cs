@@ -48,10 +48,12 @@ namespace SmartMenuLibrary
             while (RunMenu) {
                 // Clear screen and print menu
                 Console.Clear();
+                Console.WriteLine("---------------------");
                 Console.WriteLine(MenuTitle);
+                Console.WriteLine("---------------------");
 
                 // Print all menu titles.
-                for(int i=0; i < menuPoints.GetLength(0); i++) {
+                for (int i=0; i < menuPoints.GetLength(0); i++) {
                     Console.WriteLine("\t" + (i + 1) + ". " + menuPoints[i, 0]);
                 }
                 // Print description and recieve input
