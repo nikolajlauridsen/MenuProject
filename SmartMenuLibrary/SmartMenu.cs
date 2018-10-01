@@ -49,7 +49,7 @@ namespace SmartMenuLibrary
                 Console.Clear();
                 Console.WriteLine("---------------------");
                 Console.WriteLine(MenuTitle);
-                Console.WriteLine("---------------------")
+                Console.WriteLine("---------------------");
 
                 // Print all menu titles.
                 for (int i=0; i < menuPoints.GetLength(0); i++) {
