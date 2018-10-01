@@ -19,11 +19,11 @@ namespace SmartMenuLibrary
             // String list for each line (works like array but with arbitrary size;
             List<String> lines = new List<string>();
 
-            System.IO.StreamReader textFile = new System.IO.StreamReader(path);
-            while((line = textFile.ReadLine()) != null) {
-                lines.Add(line);
+            using (System.IO.StreamReader textFile = new System.IO.StreamReader(path)) {
+                while ((line = textFile.ReadLine()) != null) {
+                    lines.Add(line);
+                }
             }
-            textFile.Close();
 
             // Set title and description
             MenuTitle = lines[0];
