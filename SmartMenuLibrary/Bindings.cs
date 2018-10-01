@@ -21,18 +21,13 @@ namespace SmartMenuLibrary {
             }
             else if (menuId == "something")
             {
-                string noget;
-                while (true)
+                string noget = "";
+                while (noget.Length <= 0)
                 {
                     Console.Write("Please enter something: ");
                     noget = Console.ReadLine();
-                    if (noget.Length <= 0)
-                    {
-                        Console.WriteLine("Pleae ENTER something!");
-
-                    } else
-                    {
-                        break;
+                    if (noget.Length <= 0){
+                        Console.WriteLine("That is not something, please try again");
                     }
                 }
                 Console.WriteLine(Functions.DoSomething(noget));

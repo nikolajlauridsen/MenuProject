@@ -43,8 +43,9 @@ namespace SmartMenuLibrary
         public void Activate()
         {
             int selection = 0;
+            bool RunMenu = true;
 
-            while (true) {
+            while (RunMenu) {
                 // Clear screen and print menu
                 Console.Clear();
                 Console.WriteLine(MenuTitle);
@@ -58,7 +59,7 @@ namespace SmartMenuLibrary
                 String cmd = Console.ReadLine();
                 // Test input and call binding
                 if (cmd.ToLower() == "0") {
-                    break;
+                    RunMenu = false;
                 } else if (int.TryParse(cmd, out selection)) {
                     selection -= 1;
                     if (selection < menuPoints.GetLength(0))
@@ -73,13 +74,16 @@ namespace SmartMenuLibrary
                 }
                 else if (cmd.Length <= 0)
                 {
-                    Console.WriteLine("Pleae ENTER something!");
+                    Console.WriteLine("Please ENTER something!");
 
                 }
                 else {
                     Console.WriteLine("Invalid selection, please choose a number");
                 }
-                Console.ReadLine();
+
+                if (RunMenu) {
+                    Console.ReadLine();
+                }
             }
         }
     }
